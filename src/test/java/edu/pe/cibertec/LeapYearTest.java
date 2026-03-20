@@ -1,6 +1,5 @@
 package edu.pe.cibertec;
 
-import epu.pe.cibertec.LeapYear;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,8 @@ public class LeapYearTest {
     @BeforeEach
     void setUp(){
         leapYear = new LeapYear();
-    }
+    }   //Ejecuta antes de cada test.
+        // Crea un objeto nuevo. Cada prueba usa una instancia limpia
 
     @Test
     @DisplayName("Divisible by 4")
@@ -37,7 +37,7 @@ public class LeapYearTest {
 
     @Test
     @DisplayName("Negative year throws exception")
-    void givenNegativeYear_whenIsLeapYear_thenTrowsException(){
+    void givenNegativeYear_whenIsLeapYear_thenThrowsException(){
         assertThrows(IllegalArgumentException.class, ()-> leapYear.isLeapYear(-20));
     }
 }

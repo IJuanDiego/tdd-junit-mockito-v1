@@ -1,4 +1,4 @@
-package epu.pe.cibertec;
+package edu.pe.cibertec;
 
 public class LeapYear {
 
