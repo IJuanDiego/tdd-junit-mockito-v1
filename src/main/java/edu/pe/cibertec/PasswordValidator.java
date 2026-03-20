@@ -9,9 +9,18 @@ public class PasswordValidator {
         if(password == null || password.length()<MIN_LENGHT) return false;
         if(password.contains(" ")) return false;
         if(!hashUpperCase(password)) return false;
+        if(!hasDigit(password)) return false;
+        if(!hasLowerCase(password)) return false;
         return  true;
     }
 
     private boolean hashUpperCase(String password)
     { return password.chars().anyMatch(Character::isUpperCase);}
+
+    private boolean hasDigit(String password)
+    { return password.chars().anyMatch(Character::isDigit);}
+
+    private boolean hasLowerCase(String password)
+    { return  password.chars().anyMatch(Character::isLowerCase);}
+
 }

@@ -36,4 +36,25 @@ public class PasswordValidatorTest {
     {
         assertFalse(validator.isValid("cibertec1@"));
     }
+
+    @Test
+    @DisplayName("Password without digit is invalid")
+    void givenPasswordNotDigit_whenIsValid_thenFalse()
+    { assertFalse(validator.isValid("cibertecsac@"));}
+
+    //Password without lowercase letter is invalid
+    @Test
+    @DisplayName("Password without lowercase letter is invalid")
+    void givenNoLowerCase_whenIsValid_thenFalse()
+    {
+        assertFalse(validator.isValid("CIBERTEC1@"));
+    }
+
+    //Null password is invalid
+    @Test
+    @DisplayName("Null password is invalid")
+    void givenNullPassword_whenIsValid_thenFalse()
+    {
+        assertFalse(validator.isValid(null));
+    }
 }
